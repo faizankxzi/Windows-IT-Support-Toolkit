@@ -36,6 +36,11 @@ buttons are disabled. Use Windows PowerShell 5.1 on Windows 10 or 11.
 
 The menu becomes the task screen while work runs. Output, elapsed time and the
 current stage appear there. Results appear in the same window afterwards.
+
+A completed health scan displays its measurements inside the toolkit and saves
+a new HTML report in the Reports folder. Opening the saved HTML report is optional;
+the current scan results can be reviewed directly in the task screen.
+
 Progress uses a percentage only when file counts or Windows command output make
 one available; otherwise the bar animates without a guessed finishing time.
 
@@ -137,8 +142,11 @@ verified the stopping screen, completed-work records, skipped steps, fresh tasks
 after cancellation, and release of the lock only after the worker finished.
 
 **Real cleanup, SFC, DISM, GPUpdate, Recycle Bin deletion, UAC and elevation with
-different administrator credentials remain unverified.** No disposable Windows VM
-was available. Before relying on real maintenance operations, use a VM snapshot and:
+different administrator credentials still need complete verification for this
+version.** Early development and experimentation took place in a VMware Windows
+lab with separate local administrator and standard-user accounts. Those earlier
+experiments do not establish complete validation of the current release. Before
+relying on real maintenance operations, use a VM snapshot and:
 
 1. Copy the toolkit to a folder with spaces. Launch the BAT, cancel UAC, and
    confirm diagnostics work while maintenance stays disabled. Then relaunch with

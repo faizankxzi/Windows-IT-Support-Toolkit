@@ -24,12 +24,18 @@ Everything in the browser is simulated. It doesn’t scan your computer or run W
 
 | Tool | What it does |
 | --- | --- |
-| Health report | Saves an HTML snapshot of disk space, RAM, uptime, Temp folders, Downloads, Outlook cache and Recycle Bin usage, with warnings where relevant. |
+| Health report | Displays the latest scan results in the toolkit and saves an HTML report in the Reports folder. Covers disk space, RAM, uptime, Temp folders, Downloads, Outlook cache and Recycle Bin usage, with warnings where relevant. |
 | Cleanup | Clears the selected profile’s Temp folder and Windows Temp, or empties the running account’s Recycle Bin. Shows what was deleted, skipped and freed. |
 | Windows maintenance | Runs GPUpdate, SFC and DISM, with mode choices and live command output. |
 | Full maintenance | Runs the tools in sequence and saves separate before/after reports, with individual task outcomes. |
 
 I paid particular attention to the parts that matter when working on someone else’s machine: showing whose profile is selected, confirming cleanup locations, reporting partial results and preventing overlapping maintenance tasks.
+
+## How it came together
+
+I developed early versions in a VMware Windows lab, using separate local administrator and standard-user accounts to experiment with permissions, profile targeting and diagnostics. That gave me a place to explore how a support tool behaves when the account running it and the user being supported are different.
+
+The early prototype used Windows Forms. It later grew into the current WPF interface, with a shared PowerShell engine behind the desktop and console menus. Individual tasks remain separate scripts, so each part can be inspected and worked on independently.
 
 ## Run it on Windows
 
@@ -45,7 +51,7 @@ To explore the desktop interface with simulated operations, open PowerShell in t
 powershell.exe -NoProfile -STA -ExecutionPolicy Bypass -File .\Start-ToolkitGUI.ps1 -Preview
 ```
 
-> **Current status: prototype.** The interface and simulated workflows have been tested. Real cleanup, Windows repairs and elevation with different credentials still need disposable-VM testing. Use a VM snapshot before trying real maintenance. Cancellation cannot undo changes already made.
+> **Current status: prototype.** The interface and simulated workflows have been tested. This version still needs complete disposable-VM testing of real cleanup, Windows repairs and elevation with different credentials. Use a VM snapshot before trying real maintenance. Cancellation cannot undo changes already made.
 
 <details>
 <summary><strong>A closer look at the code</strong></summary>
