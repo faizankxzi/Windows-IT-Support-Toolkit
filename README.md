@@ -48,7 +48,7 @@ Requires **Windows 10 or 11** and **Windows PowerShell 5.1**. No third-party pac
 To explore the desktop interface with simulated operations, open PowerShell in the extracted folder and run:
 
 ```powershell
-powershell.exe -NoProfile -STA -ExecutionPolicy Bypass -File .\Start-ToolkitGUI.ps1 -Preview
+powershell.exe -NoProfile -STA -ExecutionPolicy Bypass -File .\src\Start-ToolkitGUI.ps1 -Preview
 ```
 
 > **Current status: prototype.** The interface and simulated workflows have been tested. This version still needs complete disposable-VM testing of real cleanup, Windows repairs and elevation with different credentials. Use a VM snapshot before trying real maintenance. Cancellation cannot undo changes already made.
@@ -56,13 +56,13 @@ powershell.exe -NoProfile -STA -ExecutionPolicy Bypass -File .\Start-ToolkitGUI.
 <details>
 <summary><strong>A closer look at the code</strong></summary>
 
-The desktop interface uses WPF, with PowerShell doing the work behind it. Individual tasks stay in separate scripts, while both interfaces share the same engine.
+The desktop interface uses WPF, with PowerShell doing the work behind it. Individual tasks stay in separate scripts, while both interfaces share the same engine. PowerShell scripts live in `src/`; the BAT launcher stays at the root. Generated reports use the root `Reports/` folder.
 
-- [Start-ToolkitGUI.ps1](Start-ToolkitGUI.ps1) - window, navigation and background task handling.
-- [IT-Toolkit.ps1](IT-Toolkit.ps1) - the console menu.
-- [Toolkit.Engine.ps1](Toolkit.Engine.ps1) - profile validation, measurements, output, cancellation and maintenance locking.
+- [Start-ToolkitGUI.ps1](src/Start-ToolkitGUI.ps1) - window, navigation and background task handling.
+- [IT-Toolkit.ps1](src/IT-Toolkit.ps1) - the console menu.
+- [Toolkit.Engine.ps1](src/Toolkit.Engine.ps1) - profile validation, measurements, output, cancellation and maintenance locking.
 - [docs/](docs/) - the browser simulation, built with plain HTML, CSS and JavaScript.
 
-The [user guide](docs/USER-GUIDE.md) covers task scopes, report privacy, cancellation limits and the remaining Windows test checklist. The [demo specification](DEMO-SPEC.md) documents its sample data and behaviour.
+The [user guide](docs/USER-GUIDE.md) covers task scopes, report privacy, cancellation limits and the remaining Windows test checklist. The [demo specification](docs/DEMO-SPEC.md) documents its sample data and behaviour.
 
 </details>

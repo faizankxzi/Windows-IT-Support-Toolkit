@@ -255,7 +255,7 @@ function Select-ToolkitAction {
     $ui.MainNotice.Text=''
     if ($Action -eq 'ReportsFolder') {
         try {
-            $folder=Join-Path $PSScriptRoot 'Reports'
+            $folder=Join-Path (Split-Path $PSScriptRoot -Parent) 'Reports'
             if ($Preview) {$ui.MainNotice.Text='Preview: opening folders is simulated.';return}
             if (!(Test-Path -LiteralPath $folder)) {$null=New-Item -Path $folder -ItemType Directory -ErrorAction Stop}
             $null=Get-ToolkitDirectory $folder

@@ -8,17 +8,21 @@ This is a portfolio demonstration of the existing Windows toolkit, not a browser
 administration tool. Every Windows command, file operation and reported measurement
 is simulated. The Windows scripts remain the working internal-tool prototype.
 
+Windows sources are in src/. Start-ToolkitGUI.bat stays at the repository root;
+real reports are saved in the root Reports/ folder. This specification and the
+browser assets are in docs/.
+
 References inspected in this publication folder:
 
-- `Start-ToolkitGUI.ps1`: layout, colours, eight menu cards, navigation, defaults,
+- `src/Start-ToolkitGUI.ps1`: layout, colours, eight menu cards, navigation, defaults,
   confirmations, live activity, completion banners, cancellation and report links.
-- `Toolkit.Engine.ps1`: Preview fixtures, measurements, thresholds, task results
+- `src/Toolkit.Engine.ps1`: Preview fixtures, measurements, thresholds, task results
   and progress/output handling.
-- `Generate-HealthReportHTML.ps1`: report content and overall-health calculation.
-- `Cleanup-TempFiles.ps1`, `Cleanup-RecycleBin.ps1`, `Run-GPUpdate.ps1`,
-  `Run-SFCScan.ps1`, `Run-DISMRepair.ps1` and `Full-SystemCleanup.ps1`: scopes,
+- `src/Generate-HealthReportHTML.ps1`: report content and overall-health calculation.
+- `src/Cleanup-TempFiles.ps1`, `src/Cleanup-RecycleBin.ps1`, `src/Run-GPUpdate.ps1`,
+  `src/Run-SFCScan.ps1`, `src/Run-DISMRepair.ps1` and `src/Full-SystemCleanup.ps1`: scopes,
   command choices, execution order, before/after records and cancellation.
-- `IT-Toolkit.ps1`: confirms available operations. The browser demonstrates the
+- `src/IT-Toolkit.ps1`: confirms available operations. The browser demonstrates the
   desktop GUI, not a second interactive console interface.
 
 The copied Windows GUI was exercised in Preview, including its displayed running,
@@ -419,7 +423,7 @@ its completed result rather than relabelling it cancelled.
   After CANCELLED/not generated; never create a fake after snapshot. A completed
   before report remains available. Prior failed task/report records remain visible
   even though overall cancellation takes precedence. Derive maintenance/report
-  summary status using the precedence in Full-SystemCleanup.ps1.
+  summary status using the precedence in src/Full-SystemCleanup.ps1.
 
 Cancellation never restores deleted sample files automatically. Show the GUI's
 explanation that completed changes are retained; add that these are sample-data

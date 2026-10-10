@@ -26,7 +26,7 @@ with no animation toggle. Timings and command results are explicitly simulated.
 The persistent notice reads: **Interactive simulation · Sample data · No access to your computer**.
 There is no backend, telemetry, device detection or persistent storage. The demo
 does not run PowerShell, scan Windows or read local files. Its implemented behaviour
-and sample measurements are documented in [DEMO-SPEC.md](../DEMO-SPEC.md).
+and sample measurements are documented in [DEMO-SPEC.md](DEMO-SPEC.md).
 
 ## Open the Windows toolkit
 
@@ -71,7 +71,7 @@ Closing the window remains blocked while work is running or stopping.
 From PowerShell in the repository root:
 
 ~~~powershell
-powershell.exe -NoProfile -STA -ExecutionPolicy Bypass -File .\Start-ToolkitGUI.ps1 -Preview
+powershell.exe -NoProfile -STA -ExecutionPolicy Bypass -File .\src\Start-ToolkitGUI.ps1 -Preview
 ~~~
 
 The yellow Preview badge means every task is simulated. The scenario dropdown
@@ -81,8 +81,8 @@ not delete files, run maintenance commands, save reports or open folders.
 The console menu is also available:
 
 ~~~powershell
-.\IT-Toolkit.ps1 -TargetProfilePath 'C:\Users\Example User'
-.\IT-Toolkit.ps1 -Preview
+.\src\IT-Toolkit.ps1 -TargetProfilePath 'C:\Users\Example User'
+.\src\IT-Toolkit.ps1 -Preview
 ~~~
 
 Run the real console menu from an administrator PowerShell for maintenance.
@@ -110,12 +110,12 @@ Downloads and Outlook cache are inspected. Selecting it does not change accounts
   Windows Update access and a later restart. Command completion alone does not
   prove that corruption was repaired; review the activity output.
 
-**Start-ToolkitGUI.ps1** contains the window. **IT-Toolkit.ps1** contains the console
-menu. The individual task scripts remain separate. **Toolkit.Engine.ps1** shares
+**src/Start-ToolkitGUI.ps1** contains the window. **src/IT-Toolkit.ps1** contains the console
+menu. The individual task scripts remain separate. **src/Toolkit.Engine.ps1** shares
 profile validation, progress/output handling, measurements and a maintenance lock
 that prevents concurrent tasks across toolkit windows and copies.
 
-Reports are saved as new HTML files in **Reports**. Existing reports are not
+Reports are saved as new HTML files in the repository root **Reports/** folder, not inside src/. Existing reports are not
 overwritten. Unavailable measurements are labelled, not shown as healthy zeros.
 
 ## Verification and release status

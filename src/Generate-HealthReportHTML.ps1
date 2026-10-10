@@ -4,7 +4,7 @@ param([string]$TargetProfilePath=$env:USERPROFILE,[string]$ReportLabel='HealthRe
 try {
     $health=Get-ToolkitHealth $TargetProfilePath
     Write-ToolkitStage 'Saving the health report'
-    $reportFolder=Join-Path $PSScriptRoot 'Reports'
+    $reportFolder=Join-Path (Split-Path $PSScriptRoot -Parent) 'Reports'
     if (!(Test-Path -LiteralPath $reportFolder)) { $null=New-Item -Path $reportFolder -ItemType Directory -ErrorAction Stop }
     $null=Get-ToolkitDirectory $reportFolder
     $label=$ReportLabel -replace '[^A-Za-z0-9_-]','_'
