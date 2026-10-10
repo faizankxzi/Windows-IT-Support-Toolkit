@@ -20,6 +20,12 @@ In the [demo](https://faizankxzi.github.io/Windows-IT-Support-Toolkit/), generat
 
 Everything in the browser is simulated. It doesn’t scan your computer or run Windows commands.
 
+## How it came together
+
+I developed early versions in a VMware Windows lab, using separate local administrator and standard-user accounts to experiment with permissions, profile targeting and diagnostics. That gave me a place to explore how a support tool behaves when the account running it and the user being supported are different.
+
+The early prototype used Windows Forms. It later grew into the current WPF interface, with a shared PowerShell engine behind the desktop and console menus. Individual tasks remain separate scripts, so each part can be inspected and worked on independently.
+
 ## What’s in the toolkit
 
 | Tool | What it does |
@@ -30,12 +36,6 @@ Everything in the browser is simulated. It doesn’t scan your computer or run W
 | Full maintenance | Runs the tools in sequence and saves separate before/after reports, with individual task outcomes. |
 
 I paid particular attention to the parts that matter when working on someone else’s machine: showing whose profile is selected, confirming cleanup locations, reporting partial results and preventing overlapping maintenance tasks.
-
-## How it came together
-
-I developed early versions in a VMware Windows lab, using separate local administrator and standard-user accounts to experiment with permissions, profile targeting and diagnostics. That gave me a place to explore how a support tool behaves when the account running it and the user being supported are different.
-
-The early prototype used Windows Forms. It later grew into the current WPF interface, with a shared PowerShell engine behind the desktop and console menus. Individual tasks remain separate scripts, so each part can be inspected and worked on independently.
 
 ## Run it on Windows
 
