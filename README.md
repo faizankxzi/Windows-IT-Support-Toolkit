@@ -52,10 +52,10 @@ powershell.exe -NoProfile -STA -ExecutionPolicy Bypass -File .\Start-ToolkitGUI.
 
 The desktop interface uses WPF, with PowerShell doing the work behind it. Individual tasks stay in separate scripts, while both interfaces share the same engine.
 
-- [Start-ToolkitGUI.ps1](Start-ToolkitGUI.ps1) — window, navigation and background task handling.
-- [IT-Toolkit.ps1](IT-Toolkit.ps1) — the console menu.
-- [Toolkit.Engine.ps1](Toolkit.Engine.ps1) — profile validation, measurements, output, cancellation and maintenance locking.
-- [docs/](docs/) — the browser simulation, built with plain HTML, CSS and JavaScript.
+- [Start-ToolkitGUI.ps1](Start-ToolkitGUI.ps1) - window, navigation and background task handling.
+- [IT-Toolkit.ps1](IT-Toolkit.ps1) - the console menu.
+- [Toolkit.Engine.ps1](Toolkit.Engine.ps1) - profile validation, measurements, output, cancellation and maintenance locking.
+- [docs/](docs/) - the browser simulation, built with plain HTML, CSS and JavaScript.
 
 The [user guide](docs/USER-GUIDE.md) covers task scopes, report privacy, cancellation limits and the remaining Windows test checklist. The [demo specification](DEMO-SPEC.md) documents its sample data and behaviour.
 
