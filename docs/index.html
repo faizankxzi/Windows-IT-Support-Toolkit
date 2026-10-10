@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An interactive sample-data demonstration of a Windows PowerShell IT support toolkit.">
+  <title>IT Support Toolkit · Interactive simulation</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <div class="app-window">
+    <header class="brand-bar">
+      <div class="brand"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 6a5 5 0 0 0-6 6L3 17a2.8 2.8 0 0 0 4 4l5-5a5 5 0 0 0 6-6l-3 3-4-4 3-3Z"/></svg><span>IT Support Toolkit</span></div>
+      <div class="demo-controls"><p id="simulation-notice">Interactive simulation · Sample data · No access to your computer</p><button class="btn reset" id="reset-demo" type="button">Reset Demo</button></div>
+    </header>
+    <main id="screen" aria-label="Toolkit demo"><noscript>This interactive simulation requires JavaScript. The real toolkit is a Windows PowerShell application.</noscript></main>
+  </div>
+  <footer class="explanation">The real toolkit is a Windows PowerShell desktop application. This demo uses fictional data only.<br><a href="https://github.com/faizankxzi/Windows-IT-Support-Toolkit">View the Windows toolkit source on GitHub</a></footer>
+  <div id="announcer" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>

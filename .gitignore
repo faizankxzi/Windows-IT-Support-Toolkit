@@ -1,0 +1,30 @@
+# Generated health reports (may contain real account and computer information).
+/Reports/
+/HealthReport.html
+
+# Local backups, logs and temporary files.
+/backups/
+/logs/
+*.bak
+*.backup
+*.log
+*.tmp
+*.temp
+*~
+
+# Local test and development output.
+/test-output/
+/TestResults/
+/coverage/
+/local/
+/.vscode/
+/.idea/
+/.vs/
+/.codex/
+/.agents/
+.env
+.env.*
+Thumbs.db
+Desktop.ini
+
+# Source scripts, README and future screenshots are intentionally included.
